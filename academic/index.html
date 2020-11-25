@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myNewApp">
+  <head>
+    <title>VIT360 Academics</title>
+      <link rel="icon" href="../vit360_tbg.png" type="image/icon type">
+      <link href="../stylesheet.css" rel="stylesheet" type="text/css">
+      <link href="../responsive.css" rel="stylesheet" type="text/css">
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+      <script src="app/app.js"></script>
+      <link href="content/css/styles.css" rel="stylesheet" type="text/css" >
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+      
+      <style>
+      
+      </style>
+  </head>
+    
+  <body ng-init="names=['abc','def','ghi']">
+      
+      <header>
+      <div class="container">
+        <div class="header-left">
+          <a href="../index.html"><img class="logo" src="../vit360_tbg.png" style="height: 50px; width: auto; margin-top: 5px"></a>
+        </div>
+        <!-- Add a menu icon here -->
+       <!-- <span class="fa fa-bars menu-icon"><</span> -->
+  
+        <div class="header-right">
+          <a href="#">Academics</a>
+          <a href="#">Campus life</a>
+          <a href="#" class="login signup-show">Donate</a>
+        </div>
+      </div>
+    </header>
+      <div class="signup-modal-wrapper" id="signup-modal">
+    <div class="modal">
+      <div class="close-modal">
+        <i class="fa fa-2x fa-times"></i>
+      </div>
+      <div id="signup-form">
+        <h2>Thankyou, please use the Qr code</h2>
+        <form action="#">
+          <input class="form-control" type="text" placeholder="Email">
+          <input class="form-control" type="password" placeholder="Password">
+          <div id="submit-btn">Sign up</div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+      <div class="content">
+  <p>Course : <input type="text" ng-model="data" style="margin-top: 5%"></p>
+  <!--<h1 style="color: {{data}}">Hello {{data}}</h1>-->
+          
+          
+
+      </div>
+      <div ng-controller="newController" class="content" style="height: 100vh">
+      
+      <button ng-click="order='name'">Order by name</button>
+          <button ng-click="order='cost'">Order by code</button>
+      <ul>
+        <div class="content">
+
+
+    <li ng-repeat="obj in names | orderBy: order |filter: data" ng-show="obj.show">
+        <img ng-src="{{obj.thumb}}" style="margin: -12px 10px 0 0; float: left;width:50px;"/>
+        <h3>>{{obj.name}} and {{obj.cost}}</h3>
+    <div class="remove" ng-click="removeColor(obj)">X</div>
+        <a href="{{obj.open}}"><span class="belt" style="background: grey">Open</span></a>
+              </li>
+            </div>
+    </ul>
+          
+          
+          
+    </div>
+      <footer style="background-color: #222;">
+      <div class="container">
+        <img src="../vit360_tbg.png">
+        <p>Making your college life awesome.</p>
+          <div>Icons made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
+      </div>
+    </footer>
+      <script src="../jQuery.js"></script>
+  </body>
+</html>
